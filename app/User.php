@@ -2,6 +2,10 @@
 
 namespace App;
 
+use App\Models\Board;
+use App\Models\Project;
+use App\Models\Role;
+use App\Models\Task;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -29,19 +33,19 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany('App\Models\Role');
+        return $this->belongsToMany(Role::class);
     }
 
     public function projects()
     {
-        return $this->belongsToMany('App\Models\Project');
+        return $this->belongsToMany(Project::class);
     }
     public function boards()
     {
-        return $this->belongsToMany('App\Models\Board');
+        return $this->belongsToMany(Board::class);
     }
     public function tasks()
     {
-        return $this->belongsToMany('App\Models\Task');
+        return $this->belongsToMany(Task::class);
     }
 }

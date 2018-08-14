@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
     public  function board ()
     {
-        return $this->belongsTo('App\Models\Board');
+        return $this->belongsTo(Board::class);
     }
     public  function boardColumn ()
     {
-        return $this->belongsTo('App\Models\BoardColumn');
+        return $this->belongsTo(BoardColumn::class);
     }
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany(User::class);
     }
 }

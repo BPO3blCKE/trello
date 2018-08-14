@@ -8,10 +8,10 @@ class BoardColumn extends Model
 {
     public  function board ()
     {
-        return $this->belongsTo('App\Models\Board');
+        return $this->belongsTo(Board::class);
     }
     public function tasks()
     {
-        return $this->hasMany('App\Models\Task');
+        return $this->hasMany(Task::class);
     }
 }
